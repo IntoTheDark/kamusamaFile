@@ -7,7 +7,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import axios from 'axios'
 Vue.prototype.axios = axios
-axios.defaults.baseURL = 'http://kamusama.icu:10013'
+axios.defaults.baseURL = 'https://www.intothedark.top:10013'
 Vue.use(ElementUI)
 
 Vue.config.productionTip = false

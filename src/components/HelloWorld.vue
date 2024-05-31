@@ -3,7 +3,8 @@
     <el-upload
       class="upload-demo"
       drag
-      action="http://kamusama.icu:10013/upload">
+      action="https://www.intothedark.top:10013/upload"
+      :on-success="refresh">
       <i class="el-icon-upload"></i>
       <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
       <div class="el-upload__text">大小尽量不超过500MB</div>
@@ -16,6 +17,9 @@
       <el-table-column
         prop="Key"
         label="名称">
+        <template slot-scope="scope">
+          <el-link :href="findData(scope.row.Key)" type="success" size="small">{{scope.row.Key}}</el-link>
+        </template>
       </el-table-column>
       <el-table-column
         fixed="right"
@@ -57,12 +61,17 @@ export default {
     deleteData (key) {
       this.axios({
         method: 'get',
-        url: '/delete?id=' + key
+        url: '/delete?key=' + key
       }).then((response) => {
         location.reload()
       })
+    },
+    refresh () {
+      location.reload()
+    },
+    findData (id) {
+      return 'https://kamuamua-1300419798.cos.ap-shanghai.myqcloud.com/' + id
     }
-
   },
   mounted () {
     this.getData()

@@ -108,6 +108,5 @@ export default {
   right: 0;
   margin: 1rem auto;
   position: relative;
-  height: 85%;
 }
 </style>

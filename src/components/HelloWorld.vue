@@ -33,7 +33,8 @@
         label="操作"
         width="100">
         <template slot-scope="scope">
-          <el-button  @click="deleteData(scope.row.Key)" type="danger" size="small">删除</el-button>
+          <el-button  @click="findDataUrl(scope.row.Key)" type="success" size="small">下载</el-button>
+          <!--<el-button  @click="deleteData(scope.row.Key)" type="danger" size="small">删除</el-button>-->
         </template>
       </el-table-column>
     </el-table>
@@ -79,6 +80,9 @@ export default {
     findData (id) {
       return 'https://kamuamua-1300419798.cos.ap-shanghai.myqcloud.com/' + id
     },
+    findDataUrl (id) {
+      location.href = 'https://kamuamua-1300419798.cos.ap-shanghai.myqcloud.com/' + id
+    },
     sizeData (size) {
       return (size / 1024 / 1024).toFixed(2) + 'MB'
     }
@@ -99,14 +103,7 @@ export default {
   position: relative;
   height: 85%;
 }
-.el-upload {
+.aaa {
   width: 70% ;
-}
-.el-upload-dragger{
-  width: 50%;
-  left: 0;
-  right: 0;
-  margin: 1rem auto;
-  position: relative;
 }
 </style>

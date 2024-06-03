@@ -31,10 +31,10 @@
       <el-table-column
         fixed="right"
         label="操作"
-        width="100">
+        width="150">
         <template slot-scope="scope">
           <el-button  @click="findDataUrl(scope.row.Key)" type="success" size="small">下载</el-button>
-          <!--<el-button  @click="deleteData(scope.row.Key)" type="danger" size="small">删除</el-button>-->
+          <el-button  @click="deleteData(scope.row.Key)" type="danger" size="small">删除</el-button>
         </template>
       </el-table-column>
     </el-table>

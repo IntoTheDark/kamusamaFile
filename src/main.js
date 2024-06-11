@@ -5,8 +5,10 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import fileDownload from 'js-file-download'
 import axios from 'axios'
 Vue.prototype.axios = axios
+Vue.prototype.fileDownload = fileDownload
 axios.defaults.baseURL = 'https://www.intothedark.top:10013'
 Vue.use(ElementUI)
 

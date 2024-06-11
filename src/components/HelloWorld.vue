@@ -3,7 +3,7 @@
     <el-upload
       class="upload-demo"
       drag
-      action="https://www.intothedark.top:10013/upload"
+      action="https://www.intothedark.top:10013/cd29170202e22724bb6346f4c7be156e"
       :on-success="refresh">
       <i class="el-icon-upload"></i>
       <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
@@ -15,17 +15,10 @@
       border
       style="width: 100%">
       <el-table-column
-        prop="Key"
+        prop="Name"
         label="名称">
         <template slot-scope="scope">
-          <el-link :href="findData(scope.row.Key)" type="success" size="small">{{scope.row.Key}}</el-link>
-        </template>
-      </el-table-column>
-      <el-table-column
-        label="大小"
-        width="100">
-        <template slot-scope="scope">
-          {{sizeData(scope.row.Size)}}
+          <el-link :href="findData(scope.row.Name)" type="success" size="small">{{scope.row.Name}}</el-link>
         </template>
       </el-table-column>
       <el-table-column
@@ -33,8 +26,8 @@
         label="操作"
         width="150">
         <template slot-scope="scope">
-          <el-button  @click="findDataUrl(scope.row.Key)" type="success" size="small">下载</el-button>
-          <el-button  @click="deleteData(scope.row.Key)" type="danger" size="small">删除</el-button>
+          <el-button  @click="findDataUrl(scope.row.Name)" type="success" size="small">下载</el-button>
+          <el-button  @click="deleteData(scope.row.Name)" type="danger" size="small">删除</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -42,6 +35,7 @@
 </template>
 
 <script>
+
 export default {
   data () {
     return {
@@ -55,9 +49,7 @@ export default {
         url: '/'
       }).then((response) => {
         if (response.status === 200) {
-          this.tableData = response.data.Contents.sort(function compare (a, b) {
-            if (a.LastModified < b.LastModified) { return 1 } else if (a.LastModified > b.LastModified) { return -1 } else { return 0 }
-          })
+          this.tableData = response.data.Entries
         } else {
           this.$message({
             message: response.data.msg,
@@ -78,10 +70,10 @@ export default {
       location.reload()
     },
     findData (id) {
-      return 'https://kamuamua-1300419798.cos.ap-shanghai.myqcloud.com/' + id
+      return 'https://www.intothedark.top:10013/read?key=' + id
     },
     findDataUrl (id) {
-      location.href = 'https://kamuamua-1300419798.cos.ap-shanghai.myqcloud.com/' + id
+      location.href = 'https://www.intothedark.top:10013/read?key=' + id
     },
     sizeData (size) {
       return (size / 1024 / 1024).toFixed(2) + 'MB'

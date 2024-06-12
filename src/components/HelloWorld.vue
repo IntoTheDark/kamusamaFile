@@ -70,10 +70,10 @@ export default {
       location.reload()
     },
     findData (id) {
-      return 'https://www.intothedark.top:10013/read?key=' + id
+      return 'http://110.42.14.9:10013/read?key=' + id
     },
     findDataUrl (id) {
-      location.href = 'https://www.intothedark.top:10013/read?key=' + id
+      location.href = 'http://110.42.14.9:10013/read?key=' + id
     },
     sizeData (size) {
       return (size / 1024 / 1024).toFixed(2) + 'MB'

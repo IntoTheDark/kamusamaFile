@@ -9,7 +9,7 @@ import fileDownload from 'js-file-download'
 import axios from 'axios'
 Vue.prototype.axios = axios
 Vue.prototype.fileDownload = fileDownload
-axios.defaults.baseURL = 'https://www.intothedark.top:10013'
+axios.defaults.baseURL = 'http://110.42.14.9:10013'
 Vue.use(ElementUI)
 
 Vue.config.productionTip = false

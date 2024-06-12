@@ -3,7 +3,7 @@
     <el-upload
       class="upload-demo"
       drag
-      action="https://www.intothedark.top:10013/cd29170202e22724bb6346f4c7be156e"
+      action="http://110.42.14.9:10013/cd29170202e22724bb6346f4c7be156e"
       :on-success="refresh">
       <i class="el-icon-upload"></i>
       <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
